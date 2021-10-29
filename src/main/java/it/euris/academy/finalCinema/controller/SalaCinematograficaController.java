@@ -1,7 +1,6 @@
 package it.euris.academy.finalCinema.controller;
 
 import io.swagger.annotations.Api;
-import it.euris.academy.finalCinema.data.dto.CinemaDto;
 import it.euris.academy.finalCinema.data.dto.SalaCinematograficaDto;
 import it.euris.academy.finalCinema.service.SalaCinematograficaService;
 import java.util.List;

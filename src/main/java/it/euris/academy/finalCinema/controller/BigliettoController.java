@@ -2,7 +2,6 @@ package it.euris.academy.finalCinema.controller;
 
 import io.swagger.annotations.Api;
 import it.euris.academy.finalCinema.data.dto.BigliettoDto;
-import it.euris.academy.finalCinema.data.dto.FilmDto;
 import it.euris.academy.finalCinema.service.BigliettoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
