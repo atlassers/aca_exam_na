@@ -37,19 +37,4 @@ class FilmServiceImplTest {
     assertEquals(0, systemUnderTest.getAll().size());
   }
 
-  @Test
-  @DisplayName("GIVEN valid repository with Films insider WHEN getAll() method is invoked THEN should return a LIst with the same amount of DTOs")
-  void givenRepoWithMoreThanOneFilmWhenGetAllThenReturnCorrespondingNumberOfDtos() {
-    // arrange
-    Film filmMock1 = new Film(1L, null, null, null, null, null, null, null);
-    Film filmMock2 = new Film(2L, null, null, null, null, null, null, null);
-    FilmDto filmDtoMock1 = new FilmDto("1L", null, null, null, null, null, null);
-    FilmDto filmDtoMock2 = new FilmDto("2L", null, null, null, null, null, null);
-
-    ArrayList<Film> films = new ArrayList<>();
-    films.add(filmMock1);
-    films.add(filmMock2);
-
-  }
-
 }
