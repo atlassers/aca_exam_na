@@ -33,4 +33,10 @@ public class SalaCinematografica {
   @ManyToOne(cascade = CascadeType.REFRESH)
   @JoinColumn(name = "cinema")
   private Cinema cinema;
+
+  // ManyToOne con Film
+  @ManyToOne(cascade = CascadeType.REFRESH)
+  @JoinColumn(name = "film")
+  private Film film;
+
 }
