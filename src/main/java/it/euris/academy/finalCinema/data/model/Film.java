@@ -44,8 +44,8 @@ public class Film {
   @Column(name = "durata")
   private Integer durata;   // in minuti
 
-  // OneToMany con SalaCinematografica
   @OneToMany(mappedBy = "film", cascade = CascadeType.REFRESH)
   @Builder.Default
   private List<SalaCinematografica> sale = new ArrayList<>();
+
 }

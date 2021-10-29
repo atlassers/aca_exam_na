@@ -31,4 +31,5 @@ public class Cinema {
   @OneToMany(mappedBy = "cinema", cascade = CascadeType.REFRESH)
   @Builder.Default
   private List<SalaCinematografica> sale = new ArrayList<>();
+
 }
