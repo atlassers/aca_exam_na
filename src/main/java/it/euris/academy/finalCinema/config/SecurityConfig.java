@@ -18,6 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/actuator/*", "/swagger-ui.html**", "/webjars/**", "/v3/**").authenticated()
         .antMatchers("/FilmController/**").hasRole("manager")
         .antMatchers("/CinemaController/**").hasRole("manager")
+        .antMatchers("/BigliettoController/**").hasRole("manager")
         .antMatchers("/projectionsPlanner/**").hasRole("manager")
         .and()
         .httpBasic();
