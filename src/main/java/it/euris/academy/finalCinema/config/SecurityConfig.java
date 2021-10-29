@@ -23,7 +23,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/projectionsPlanner/**").hasRole("manager")
         .and()
         .httpBasic();
-
   }
 
   @Bean
