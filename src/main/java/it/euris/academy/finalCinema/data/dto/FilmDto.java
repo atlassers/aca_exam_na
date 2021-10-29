@@ -1,5 +1,7 @@
 package it.euris.academy.finalCinema.data.dto;
 
+import it.euris.academy.finalCinema.data.archetype.Dto;
+import it.euris.academy.finalCinema.data.archetype.Model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class FilmDto {
+public class FilmDto implements Dto {
 
   private String idFilm;
   private String autore;
@@ -18,4 +20,8 @@ public class FilmDto {
   private String etaMinima;
   private String durata;   // in minuti
 
+  @Override
+  public Model toModel() {
+    return null;
+  }
 }

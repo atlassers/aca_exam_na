@@ -1,5 +1,7 @@
 package it.euris.academy.finalCinema.data.model;
 
+import it.euris.academy.finalCinema.data.archetype.Dto;
+import it.euris.academy.finalCinema.data.archetype.Model;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "biglietto")
 @Entity
-public class Biglietto {
+public class Biglietto implements Model {
 
   @Id
   @Column(name = "id_biglietto")
@@ -43,4 +45,8 @@ public class Biglietto {
   @JoinColumn(name = "spettatore")
   private Spettatore spettatore;
 
+  @Override
+  public Dto toDto() {
+    return null;
+  }
 }

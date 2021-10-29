@@ -1,6 +1,8 @@
 package it.euris.academy.finalCinema.data.model;
 
 import it.euris.academy.finalCinema.data.Genere;
+import it.euris.academy.finalCinema.data.archetype.Dto;
+import it.euris.academy.finalCinema.data.archetype.Model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "film")
 @Entity
-public class Film {
+public class Film implements Model {
 
   @Id
   @Column(name = "id_film")
@@ -48,4 +50,8 @@ public class Film {
   @Builder.Default
   private List<SalaCinematografica> sale = new ArrayList<>();
 
+  @Override
+  public Dto toDto() {
+    return null;
+  }
 }

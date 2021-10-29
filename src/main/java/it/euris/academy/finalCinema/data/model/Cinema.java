@@ -1,5 +1,7 @@
 package it.euris.academy.finalCinema.data.model;
 
+import it.euris.academy.finalCinema.data.archetype.Dto;
+import it.euris.academy.finalCinema.data.archetype.Model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -21,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "cinema")
 @Entity
-public class Cinema {
+public class Cinema implements Model {
 
   @Id
   @Column(name = "id_cinema")
@@ -32,4 +34,8 @@ public class Cinema {
   @Builder.Default
   private List<SalaCinematografica> sale = new ArrayList<>();
 
+  @Override
+  public Dto toDto() {
+    return null;
+  }
 }

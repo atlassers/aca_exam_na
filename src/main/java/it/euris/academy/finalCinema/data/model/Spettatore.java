@@ -1,5 +1,7 @@
 package it.euris.academy.finalCinema.data.model;
 
+import it.euris.academy.finalCinema.data.archetype.Dto;
+import it.euris.academy.finalCinema.data.archetype.Model;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "spettatore")
 @Entity
-public class Spettatore {
+public class Spettatore implements Model {
 
   @Id
   @Column(name = "id_spettatore")
@@ -38,4 +40,9 @@ public class Spettatore {
 
   @OneToOne(mappedBy = "spettatore", cascade = CascadeType.REFRESH)
   private Biglietto biglietto;
+
+  @Override
+  public Dto toDto() {
+    return null;
+  }
 }
