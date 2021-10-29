@@ -36,6 +36,8 @@ public class Cinema implements Model {
 
   @Override
   public CinemaDto toDto() {
-    return null;
+    return CinemaDto.builder()
+        .idCinemaDto(String.valueOf(idCinema))
+        .build();
   }
 }

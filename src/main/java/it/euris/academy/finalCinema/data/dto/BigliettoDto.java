@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 public class BigliettoDto implements Dto {
 
   private String idBigliettoDto;
-  private String idSpettatoreDto;
-  private String nomeDto;
-  private String cognomeDto;
-  private String dataNascitaDto;
+  private String idSala;
+  private String postoASedere;
+  private String dataEmissione;
+  private String idSpettatore;
 
   @Override
   public Biglietto toModel() {

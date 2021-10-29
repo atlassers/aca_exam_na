@@ -17,6 +17,8 @@ public class CinemaDto implements Dto {
 
   @Override
   public Cinema toModel() {
-    return null;
+    return Cinema.builder()
+        .idCinema(idCinemaDto == null ? null : Long.valueOf(idCinemaDto))
+        .build();
   }
 }

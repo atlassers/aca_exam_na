@@ -35,6 +35,10 @@ public class SalaCinematografica implements Model {
   @Column(name = "posti_totali")
   private Integer postiTotali;
 
+  @Column(name = "posti_occupati")
+  @Builder.Default
+  private Integer postiOccupati = 0;
+
   @ManyToOne(cascade = CascadeType.REFRESH)
   @JoinColumn(name = "cinema")
   private Cinema cinema;

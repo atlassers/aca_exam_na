@@ -17,6 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.cors().and().csrf().disable().authorizeRequests()
         .antMatchers("/actuator/*", "/swagger-ui.html**", "/webjars/**", "/v3/**").authenticated()
         .antMatchers("/FilmController/**").hasRole("manager")
+        .antMatchers("/CinemaController/**").hasRole("manager")
         .antMatchers("/projectionsPlanner/**").hasRole("manager")
         .and()
         .httpBasic();
