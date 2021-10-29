@@ -1,5 +1,6 @@
 package it.euris.academy.finalCinema.data.dto;
 
+import it.euris.academy.finalCinema.data.Genere;
 import it.euris.academy.finalCinema.data.archetype.Dto;
 import it.euris.academy.finalCinema.data.model.Film;
 import lombok.AllArgsConstructor;
@@ -19,9 +20,18 @@ public class FilmDto implements Dto {
   private String genere;
   private String etaMinima;
   private String durata;   // in minuti
+  private String prezzo;
 
   @Override
   public Film toModel() {
-    return null;
+    return Film.builder()
+        .idFilm(idFilm == null ? null : Long.valueOf(idFilm))
+        .autore(autore)
+        .produttore(produttore)
+        .genere(Genere.valueOf(genere))
+        .etaMinima(Integer.valueOf(etaMinima))
+        .durata(Integer.valueOf(durata))
+        .prezzo(Long.valueOf(prezzo))
+        .build();
   }
 }

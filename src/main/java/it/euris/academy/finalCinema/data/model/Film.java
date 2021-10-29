@@ -46,12 +46,23 @@ public class Film implements Model {
   @Column(name = "durata")
   private Integer durata;   // in minuti
 
+  @Column(name = "prezzo")
+  private Long prezzo;
+
   @OneToMany(mappedBy = "film", cascade = CascadeType.REFRESH)
   @Builder.Default
   private List<SalaCinematografica> sale = new ArrayList<>();
 
   @Override
   public FilmDto toDto() {
-    return null;
+    return FilmDto.builder()
+        .idFilm(String.valueOf(idFilm))
+        .autore(autore)
+        .produttore(produttore)
+        .genere(String.valueOf(genere))
+        .etaMinima(String.valueOf(etaMinima))
+        .durata(String.valueOf(durata))
+        .prezzo(String.valueOf(prezzo))
+        .build();
   }
 }

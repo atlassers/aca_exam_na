@@ -1,9 +1,9 @@
 # Parametri generali di settaggio del server
-# http://localhost:8100/academy-cinema-final
+# http://localhost:8100/academy-cinema-na-final/swagger-ui.html
 server:
   port: 8100
   servlet:
-    context-path: /academy-cinema-final
+    context-path: /academy-cinema-na-final
 
 ## Application
 spring:
@@ -45,5 +45,5 @@ management:
     health:
       show-details: when-authorized
   server:
-    port: 9101
+    port: 9100
     base-path: /health
