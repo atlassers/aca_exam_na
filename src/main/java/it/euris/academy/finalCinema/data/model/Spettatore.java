@@ -43,6 +43,11 @@ public class Spettatore implements Model {
 
   @Override
   public SpettatoreDto toDto() {
-    return null;
+    return SpettatoreDto.builder()
+        .idSpettatore(String.valueOf(idSpettatore))
+        .nome(nome)
+        .cognome(cognome)
+        .dataNascita(String.valueOf(dataNascita))
+        .build();
   }
 }

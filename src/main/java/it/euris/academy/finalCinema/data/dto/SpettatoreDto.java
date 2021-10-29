@@ -2,6 +2,8 @@ package it.euris.academy.finalCinema.data.dto;
 
 import it.euris.academy.finalCinema.data.archetype.Dto;
 import it.euris.academy.finalCinema.data.model.Spettatore;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +22,17 @@ public class SpettatoreDto implements Dto {
 
   @Override
   public Spettatore toModel() {
-    return null;
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+    Spettatore s= Spettatore.builder()
+        .idSpettatore(Long.valueOf(idSpettatore))
+        .nome(nome)
+        .cognome(cognome)
+        .build();
+    try {
+      s.setDataNascita(formatter.parse(dataNascita));
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    return s;
   }
 }
