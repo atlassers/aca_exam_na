@@ -60,4 +60,15 @@ public class SalaCinematograficaServiceImpl implements SalaCinematograficaServic
       return Boolean.FALSE;
     }
   }
+
+  @Override
+  public Boolean svuotaSala(Long id) {
+    Optional<SalaCinematografica> toEmptySala = salaCinematograficaRepository.findById(id);
+    toEmptySala.get().setPostiOccupati(0);
+    if(toEmptySala.isEmpty()) {
+      return Boolean.FALSE;
+    } else {
+      return Boolean.TRUE;
+    }
+  }
 }

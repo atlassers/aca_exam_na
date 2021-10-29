@@ -41,6 +41,9 @@ public class Biglietto implements Model {
   @Column(name = "data_emissione")
   private Date dataEmissione;
 
+  @Column(name = "prezzo")
+  private Long prezzo;
+
   @OneToOne(cascade = CascadeType.REFRESH)
   @JoinColumn(name = "spettatore")
   private Spettatore spettatore;

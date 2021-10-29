@@ -60,4 +60,15 @@ public class CinemaServiceImpl implements CinemaService {
       return Boolean.FALSE;
     }
   }
+
+  @Override
+  public Cinema getModel(Long id) {
+    Optional<Cinema> findById = cinemaRepository.findById(id);
+    if(findById.isPresent()) {
+      return findById.get();
+    }
+    return null;
+  }
+
+
 }

@@ -60,4 +60,13 @@ public class FilmServiceImpl implements FilmService {
       return Boolean.FALSE;
     }
   }
+
+  @Override
+  public Film getModel(Long id) {
+    Optional<Film> findById = filmRepository.findById(id);
+    if(findById.isPresent()) {
+      return findById.get();
+    }
+    return null;
+  }
 }

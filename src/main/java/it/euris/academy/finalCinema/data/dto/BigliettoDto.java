@@ -18,6 +18,7 @@ public class BigliettoDto implements Dto {
   private String postoASedere;
   private String dataEmissione;
   private String idSpettatore;
+  private String prezzo;
 
   @Override
   public Biglietto toModel() {

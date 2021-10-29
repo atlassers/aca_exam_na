@@ -10,4 +10,5 @@ public interface SalaCinematograficaService {
   SalaCinematograficaDto add(SalaCinematograficaDto salaCinematograficaDto);
   SalaCinematograficaDto update(SalaCinematograficaDto movieDto);
   Boolean delete(Long id);
+  Boolean svuotaSala(Long id);
 }
