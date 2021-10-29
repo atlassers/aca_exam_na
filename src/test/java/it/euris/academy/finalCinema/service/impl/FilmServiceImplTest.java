@@ -28,7 +28,7 @@ class FilmServiceImplTest {
   @InjectMocks
   FilmServiceImpl systemUnderTest;
 
-  ///   getAll()   //////////////////////////////////////
+  ///   getAll()             ////////////////////////////////////////////////////
   @Test
   @DisplayName("GIVEN empty repository WHEN getAll() method is invoked THEN return empty List")
   void givenEmptyRepoWhenGetAllThenReturnEmptyList() {
@@ -38,6 +38,24 @@ class FilmServiceImplTest {
 
     // act & assert
     assertEquals(0, systemUnderTest.getAll().size());
+  }
+
+  @Test
+  @DisplayName("GIVEN not empty repository WHEN getAll() method is invoked THEN return List containing what expected")
+  void givenNotEmptyRepoWhenGetAllThenReturnEmptyList() {
+    // arrange
+    ArrayList<Film> films = new ArrayList<>();
+    Film mockedFilm1 = new Film(1L, null,null,null,null,null,null,null);
+    Film mockedFilm2 = new Film(2L, null,null,null,null,null,null,null);
+    films.add(mockedFilm1);
+    films.add(mockedFilm2);
+
+    Mockito.when(mockedFilmRepository.findAll()).thenReturn(films);
+
+    // act & assert
+    assertEquals(2, systemUnderTest.getAll().size());
+    assertEquals("1", systemUnderTest.getAll().get(0).getIdFilm());
+    assertEquals("2", systemUnderTest.getAll().get(1).getIdFilm());
   }
 
   ////      get()             ////////////////////////////////////////////////////
@@ -54,7 +72,7 @@ class FilmServiceImplTest {
 
   @Test
   @DisplayName("GIVEN repository containing Film having given id, WHEN invoking get(id) method THEN should return that Film")
-  public void givenPresentExperimentWhenUsingGetMethodThenShouldReturnThatExperiment() {
+  public void givenPresentFilmWhenUsingGetMethodThenShouldReturnThatExperiment() {
     // arrange
     Long id = 1L;
     Film film = new Film(id, null, null, null, null, null, null,null);
@@ -91,5 +109,4 @@ class FilmServiceImplTest {
     // act & assert
     assertEquals(Boolean.FALSE, systemUnderTest.delete(id));
   }
-
 }
