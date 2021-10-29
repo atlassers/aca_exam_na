@@ -40,6 +40,33 @@ class FilmServiceImplTest {
     assertEquals(0, systemUnderTest.getAll().size());
   }
 
+  ////      get()             ////////////////////////////////////////////////////
+  @Test
+  @DisplayName("GIVEN repository not containing Film having given id, WHEN invoking get(id) method THEN should return null")
+  public void givenNotPresentFilmWhenUsingGetMethodThenShouldReturnNull() {
+    // arrange
+    Long id = 1L;
+    Mockito.when(mockedFilmRepository.findById(id)).thenReturn(Optional.empty());
+
+    // act & assert
+    assertNull(systemUnderTest.get(id));
+  }
+
+  @Test
+  @DisplayName("GIVEN repository containing Film having given id, WHEN invoking get(id) method THEN should return that Film")
+  public void givenPresentExperimentWhenUsingGetMethodThenShouldReturnThatExperiment() {
+    // arrange
+    Long id = 1L;
+    Film film = new Film(id, null, null, null, null, null, null,null);
+    FilmDto filmDto = new FilmDto("1L", null, null, null, null, null, null);
+    Mockito.when(mockedFilmRepository.findById(id)).thenReturn(Optional.of(film));
+
+
+    // act & assert
+    assertNotNull(systemUnderTest.get(id));
+    assertEquals("1", systemUnderTest.get(id).getIdFilm());
+  }
+
   ////      delete()          ////////////////////////////////////////////////////
   @Test
   @DisplayName("GIVEN id present into database WHEN delete() method invoked THEN delete method should be invoked and return TRUE")
