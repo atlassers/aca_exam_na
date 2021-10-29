@@ -1,7 +1,7 @@
 package it.euris.academy.finalCinema.data.model;
 
-import it.euris.academy.finalCinema.data.archetype.Dto;
 import it.euris.academy.finalCinema.data.archetype.Model;
+import it.euris.academy.finalCinema.data.dto.SpettatoreDto;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -42,7 +42,7 @@ public class Spettatore implements Model {
   private Biglietto biglietto;
 
   @Override
-  public Dto toDto() {
+  public SpettatoreDto toDto() {
     return null;
   }
 }

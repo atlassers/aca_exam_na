@@ -1,7 +1,7 @@
 package it.euris.academy.finalCinema.data.dto;
 
 import it.euris.academy.finalCinema.data.archetype.Dto;
-import it.euris.academy.finalCinema.data.archetype.Model;
+import it.euris.academy.finalCinema.data.model.SalaCinematografica;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class SalaCinematograficaDto implements Dto {
   private String postiTotali;
 
   @Override
-  public Model toModel() {
+  public SalaCinematografica toModel() {
     return null;
   }
 }

@@ -1,8 +1,8 @@
 package it.euris.academy.finalCinema.data.model;
 
 import it.euris.academy.finalCinema.data.Genere;
-import it.euris.academy.finalCinema.data.archetype.Dto;
 import it.euris.academy.finalCinema.data.archetype.Model;
+import it.euris.academy.finalCinema.data.dto.FilmDto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -51,7 +51,7 @@ public class Film implements Model {
   private List<SalaCinematografica> sale = new ArrayList<>();
 
   @Override
-  public Dto toDto() {
+  public FilmDto toDto() {
     return null;
   }
 }

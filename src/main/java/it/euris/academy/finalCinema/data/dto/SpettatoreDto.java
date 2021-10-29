@@ -1,7 +1,7 @@
 package it.euris.academy.finalCinema.data.dto;
 
 import it.euris.academy.finalCinema.data.archetype.Dto;
-import it.euris.academy.finalCinema.data.archetype.Model;
+import it.euris.academy.finalCinema.data.model.Spettatore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +19,7 @@ public class SpettatoreDto implements Dto {
   private String dataNascita;
 
   @Override
-  public Model toModel() {
+  public Spettatore toModel() {
     return null;
   }
 }
